@@ -58,3 +58,6 @@ sysinfo.txt
 # Crashlytics generated file
 crashlytics-build.properties
 
+[Aa]ssets/AstarPathfindingProject/ExampleScenes*
+[Aa]ssets/AstarPathfindingProject/Documentation*
+[Aa]ssets/AstarPathfindingProject/TurnBased*
