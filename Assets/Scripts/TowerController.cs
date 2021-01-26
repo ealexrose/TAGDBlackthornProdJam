@@ -19,6 +19,7 @@ public class TowerController : MonoBehaviour
     public bool towerSlatedForDestruction;
     
     public bool destroyed;
+
     // Start is called before the first frame update
     void Awake()
     {
@@ -124,17 +125,25 @@ public class TowerController : MonoBehaviour
         Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, range);
         if (colliders.Length > 0)
         {
+            GameObject HighestPriority = null;            // priority is based on the lowest amount of nodes left to travel.
+            int LowestValue = 99999;                // amount of nodes that should be impossible to reach
             foreach (Collider2D collider in colliders)
             {
-                if (collider.CompareTag("Enemy"))
+                if (collider.CompareTag("Enemy"))       // all enemies should have a pathfinder.seeker component.
                 {
-                    target = collider.gameObject;
-                    return;
+                    Pathfinding.Seeker TestEnemy = collider.GetComponent<Pathfinding.Seeker>();
+                    if (LowestValue >= TestEnemy.RetreivePriority())
+                    {
+                        LowestValue = TestEnemy.RetreivePriority();
+                        HighestPriority = collider.gameObject;
+                    }
                 }
             }
+
+            target = HighestPriority;
         }
     }
-
+    
     private void ShootTarget()
     {
         GameObject bullet = Instantiate(projectile, transform.position, Quaternion.identity, null);

@@ -503,5 +503,10 @@ namespace Pathfinding {
 			}
 			return base.OnUpgradeSerializedData(version, unityThread);
 		}
+
+        public int RetreivePriority()
+        {
+            return path.path.Count;
+        }
 	}
 }
