@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour
     public int towersSlatedForDestruction;
     List<GameObject> towers = new List<GameObject>();
 
-
+    bool fastforwarding;
     // Start is called before the first frame update
     void Awake()
     {
@@ -25,6 +25,42 @@ public class GameManager : MonoBehaviour
         if (Input.GetButtonDown("Jump") && BetweenWaves) 
         {
             TryStartNextWave();
+        }
+        if (Input.GetButtonDown("Horizontal"))
+        {
+            FastForward();
+        }
+        else if (Input.GetButtonUp("Horizontal")) 
+        {
+            NormalSpeed();
+        }
+    }
+
+    private void FastForward()
+    {
+        if (fastforwarding) 
+        {
+            return;
+        }
+        else
+        {
+            Time.timeScale = 5f;
+            fastforwarding = true;
+            return;
+        }
+    }
+
+    private void NormalSpeed()
+    {
+        if (!fastforwarding)
+        {
+            return;
+        }
+        else
+        {
+            Time.timeScale = 1f;
+            fastforwarding = false;
+            return;
         }
     }
 
