@@ -34,7 +34,6 @@ public class HQController : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Enemy"))
         {
-            
             DamageHQ(collision.gameObject.GetComponent<EnemyController>().strength);
             Destroy(collision.gameObject);
         }
