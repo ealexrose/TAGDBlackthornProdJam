@@ -1,10 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Pathfinding;
 
 public class WaveSpawner : MonoBehaviour
 {
     public GameObject enemy;
+    public Transform Base;
     [HideInInspector]
     public bool spawning;
 
@@ -27,8 +29,10 @@ public class WaveSpawner : MonoBehaviour
         if (remainingWaveEnemies > 0)
         {
             yield return new WaitForSeconds(timeBetweenSpawns);
-            Instantiate(enemy, transform.position, Quaternion.identity, null);
+            GameObject clone = Instantiate(enemy, transform.position, Quaternion.identity, null);
             remainingWaveEnemies--;
+            clone.GetComponent<AIDestinationSetter>().target = Base;
+            Debug.Log(clone.GetComponent<AIDestinationSetter>().target);
             StartCoroutine(EnemySpawn(remainingWaveEnemies, timeBetweenSpawns));
         }
         else 

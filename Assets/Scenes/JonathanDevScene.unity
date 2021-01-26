@@ -247,7 +247,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &72733655
 Transform:
   m_ObjectHideFlags: 0
@@ -325,6 +325,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 7995799790402962645, guid: 73e0f299dfa25504e8e6c329e56b78e4, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 73e0f299dfa25504e8e6c329e56b78e4, type: 3}
 --- !u!1 &242800154
@@ -343,7 +347,7 @@ GameObject:
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &242800155
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -357,6 +361,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 7995799790402962645, guid: 73e0f299dfa25504e8e6c329e56b78e4, type: 3}
+  Base: {fileID: 296369330}
   spawning: 0
 --- !u!4 &242800156
 Transform:
@@ -845,30 +850,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dc6f9615f0c628d4797b7467674bcecc, type: 3}
---- !u!1 &1571805643 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7995799790402962645, guid: 73e0f299dfa25504e8e6c329e56b78e4, type: 3}
-  m_PrefabInstance: {fileID: 100713195}
-  m_PrefabAsset: {fileID: 0}
---- !u!95 &1571805651
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1571805643}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 6f515f16fa4e1d84d892390f568ddea3, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1608448287
 GameObject:
   m_ObjectHideFlags: 0
@@ -899,8 +880,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01d24af6a9196e74f847c5b344fd667e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waveSize: 5
-  timeBetweenSpawns: 0.22
+  waveSize: 100
+  timeBetweenSpawns: 0.5
 --- !u!4 &1608448289
 Transform:
   m_ObjectHideFlags: 0
@@ -1353,7 +1334,7 @@ GameObject:
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &2061521471
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1367,6 +1348,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 7995799790402962645, guid: 73e0f299dfa25504e8e6c329e56b78e4, type: 3}
+  Base: {fileID: 296369330}
   spawning: 0
 --- !u!4 &2061521472
 Transform:

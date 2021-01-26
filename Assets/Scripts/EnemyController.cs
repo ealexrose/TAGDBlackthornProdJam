@@ -10,7 +10,7 @@ public class EnemyController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = transform.position += (Vector3.down * moveSpeed * Time.deltaTime);
+        
     }
 
     public void Damage(float damage) 
