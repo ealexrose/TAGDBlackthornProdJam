@@ -258,6 +258,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Health_Bar_UI
       objectReference: {fileID: 0}
+    - target: {fileID: 2163319862604465606, guid: 3c5219a8c80d2b14bb4a965659faf932, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2163319862604465607, guid: 3c5219a8c80d2b14bb4a965659faf932, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2163319862738083417, guid: 3c5219a8c80d2b14bb4a965659faf932, type: 3}
       propertyPath: m_Color.b
       value: 0.0013723373
@@ -269,6 +277,10 @@ PrefabInstance:
     - target: {fileID: 2163319862738083417, guid: 3c5219a8c80d2b14bb4a965659faf932, type: 3}
       propertyPath: m_Color.r
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2163319864579634668, guid: 3c5219a8c80d2b14bb4a965659faf932, type: 3}
+      propertyPath: m_RaycastTarget
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3c5219a8c80d2b14bb4a965659faf932, type: 3}

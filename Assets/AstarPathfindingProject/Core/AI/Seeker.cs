@@ -506,6 +506,7 @@ namespace Pathfinding {
 
         public int RetreivePriority()
         {
+           if(path == null) { return 999; } // if an enemy spawns and the tower detects it at the same time, then the path will not have generated yet. Return an ambiguous number.
             return path.path.Count;
         }
 	}

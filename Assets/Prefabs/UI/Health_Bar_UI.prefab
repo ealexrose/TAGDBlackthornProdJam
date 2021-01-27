@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2163319862604465602}
   - component: {fileID: 2163319862604465601}
   - component: {fileID: 2163319862604465600}
-  - component: {fileID: 2163319862604465607}
+  - component: {fileID: 6228224174253124141}
   m_Layer: 5
   m_Name: Health_Bar_UI
   m_TagString: Untagged
@@ -36,7 +36,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 3.008, y: 2.38}
+  m_AnchoredPosition: {x: 3.0079956, y: 2.380005}
   m_SizeDelta: {x: 4.611931, y: 1.2426109}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &2163319862604465601
@@ -82,23 +82,18 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
---- !u!114 &2163319862604465607
-MonoBehaviour:
+--- !u!225 &6228224174253124141
+CanvasGroup:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2163319862604465606}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_IgnoreReversedGraphics: 1
-  m_BlockingObjects: 0
-  m_BlockingMask:
-    serializedVersion: 2
-    m_Bits: 0
+  m_Alpha: 1
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
+  m_IgnoreParentGroups: 0
 --- !u!1 &2163319862738083422
 GameObject:
   m_ObjectHideFlags: 0
