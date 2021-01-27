@@ -14,10 +14,10 @@ public class TowerController : MonoBehaviour
     public float shootSpeedCooldown;
     public float damage;
     float cooldownTimer;
+    bool isMouseOver;
+    bool rangeDisplayed;
 
-    
     public bool towerSlatedForDestruction;
-    
     public bool destroyed;
 
     // Start is called before the first frame update
@@ -29,6 +29,7 @@ public class TowerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        isMouseOver = MouseCast();
         if (!destroyed)
         {
             if (!GameManager.BetweenWaves)
@@ -39,14 +40,24 @@ public class TowerController : MonoBehaviour
             {
                 ChooseDestruction();
             }
+
+            if (isMouseOver) 
+            {
+                ShowRange();
+            }
         }
+        if (!isMouseOver && rangeDisplayed) 
+        {
+            HideRange();
+        }
+
 
     }
 
     private void ChooseDestruction()
     {
-        bool mouseOnMe = MouseCast();
-        if (mouseOnMe)
+
+        if (isMouseOver)
         {
             if (!towerSlatedForDestruction && !instantiatedDestructionPreview)
             {
@@ -143,7 +154,7 @@ public class TowerController : MonoBehaviour
             target = HighestPriority;
         }
     }
-    
+
     private void ShootTarget()
     {
         GameObject bullet = Instantiate(projectile, transform.position, Quaternion.identity, null);
@@ -168,6 +179,18 @@ public class TowerController : MonoBehaviour
         }
     }
 
+    private void ShowRange()
+    {
+        transform.GetChild(0).localScale = Vector3.one * range;
+        rangeDisplayed = true;
+        transform.GetChild(0).gameObject.SetActive(true);
+    }
+    private void HideRange()
+    {
+        rangeDisplayed = false;
+        transform.GetChild(0).localScale = Vector3.one;
+        transform.GetChild(0).gameObject.SetActive(false);
+    }
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = new Color(0, 0, .5f, .5f);
