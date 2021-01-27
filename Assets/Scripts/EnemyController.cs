@@ -17,7 +17,7 @@ public class EnemyController : MonoBehaviour
 
     void Update()
     {
-
+   
     }
 
     public void Damage(float damage) 
@@ -26,6 +26,7 @@ public class EnemyController : MonoBehaviour
         HealthBar_UI.UpdateHealth_UI(health);
         if (health <= 0) 
         {
+            ScreenShakeController.instance.ShakeScreen(0.1f, 0.1f);
             Destroy(this.gameObject);
         }
     }

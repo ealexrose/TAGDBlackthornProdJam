@@ -32,9 +32,16 @@ public class PauseMenu : MonoBehaviour
 
     private Animator PauseMenu_UI;
 
+    public static PauseMenu instance;
+
     private void Awake()
     {
         PauseMenu_UI = GetComponent<Animator>();
+    }
+
+    private void Start()
+    {
+        instance = this;
     }
 
     private void Update()

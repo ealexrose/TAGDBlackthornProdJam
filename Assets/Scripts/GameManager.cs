@@ -13,15 +13,19 @@ public class GameManager : MonoBehaviour
     List<GameObject> towers = new List<GameObject>();
 
     bool fastforwarding;
-    // Start is called before the first frame update
+    [SerializeField] Animator EndScreenUI;
+    // Start is called before the first frame update 
+    public static GameManager instance;
+
     void Awake()
     {
-        
+        instance = this;
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (PauseMenu.instance.GameIsPaused) { return; }        // bugs arise when we try to pause the game and then speed up. It changes the time scale when it is paused.
         if (Input.GetButtonDown("Jump") && BetweenWaves) 
         {
             TryStartNextWave();
@@ -36,7 +40,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    private void FastForward()
+    public void FastForward()
     {
         if (fastforwarding) 
         {
@@ -50,7 +54,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    private void NormalSpeed()
+    public void NormalSpeed()
     {
         if (!fastforwarding)
         {
@@ -97,9 +101,10 @@ public class GameManager : MonoBehaviour
         towersSlatedForDestruction = 0;
     }
 
-    public static void LoseGame() 
+    public void LoseGame() 
     {
-        throw new NotImplementedException("Game Loss not implemented");
+        EndScreenUI.SetTrigger("GameEnded");
+        // do other stuff here
     }
     public int AddTower(GameObject tower) 
     {

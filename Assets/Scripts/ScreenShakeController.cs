@@ -29,10 +29,10 @@ public class ScreenShakeController : MonoBehaviour
     private void Update()
     {
         transform.position = TargetPosition;
-
-        if (Input.GetKeyDown(KeyCode.A))
+        /*Testing
+        if (Input.GetKeyDown(KeyCode.A)) 
             ShakeScreen(0.2f, 0.3f);
-
+            */
     }
 
     private void LateUpdate()                   // offset the position of the camera if the camera is shaking.
