@@ -11,15 +11,28 @@ public class GameManager : MonoBehaviour
     public int maxTowerDestruction;
     public int towersSlatedForDestruction;
     List<GameObject> towers = new List<GameObject>();
+    WaveManager Wave_Manager;
 
-    bool fastforwarding;
-    [SerializeField] Animator EndScreenUI;
     // Start is called before the first frame update 
     public static GameManager instance;
+    bool fastforwarding;
+
+    #region User Interface Variables
+    [SerializeField] Animator EndScreenUI;
+    [SerializeField] Animator NextWaveNotification;
+    [SerializeField] Animator NextWaveButton;
+    int WaveNotificationID;     // Hash ID of the Wave Animation
+
+    string NextWaveText = "Wave X Finished \nDestroy towers to power up remaining towers";
+    string NextWaveStartingText = "Next Wave Starting...";
+
+    #endregion
 
     void Awake()
     {
         instance = this;
+        WaveNotificationID = Animator.StringToHash("WaveNotification");
+        Wave_Manager = GetComponent<WaveManager>();
     }
 
     // Update is called once per frame
@@ -68,8 +81,10 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public static void WaveEnded() 
+    public void WaveEnded() 
     {
+        NextWaveNotification.Play(WaveNotificationID);
+        NextWaveButton.SetBool("WaveIntermission",true);
         BetweenWaves = true;
         Debug.Log("wave ended");
     }
@@ -79,7 +94,7 @@ public class GameManager : MonoBehaviour
         if (TowerDestructionWithinMargin()) 
         {
             DestroyTowers();
-            GetComponent<WaveManager>().SpawnWave(10,.2f);
+            Wave_Manager.SpawnWave(10,.2f);
         }
     }
 

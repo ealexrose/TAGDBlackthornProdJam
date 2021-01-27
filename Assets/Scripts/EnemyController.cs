@@ -15,10 +15,6 @@ public class EnemyController : MonoBehaviour
         HealthBar_UI.InitializeHealth(health);
     }
 
-    void Update()
-    {
-   
-    }
 
     public void Damage(float damage) 
     {

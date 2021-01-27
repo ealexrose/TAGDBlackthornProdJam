@@ -13,14 +13,6 @@ public class HQController : MonoBehaviour
         HealthBar_UI.InitializeHealth(health);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
-
-
     public void DamageHQ(float damage) 
     {
         health -= damage;

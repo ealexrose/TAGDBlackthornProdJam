@@ -33,7 +33,7 @@ public class WaveManager : MonoBehaviour
             if (!spawnersActive && !FindObjectOfType<EnemyController>())
             {
                 waveActive = false;
-                GameManager.WaveEnded();
+                GameManager.instance.WaveEnded();
             }
 
         }
