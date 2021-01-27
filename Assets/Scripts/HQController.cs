@@ -6,11 +6,11 @@ using UnityEngine;
 public class HQController : MonoBehaviour
 {
     public float health;
+    [SerializeField] Healthbar HealthBar_UI;
 
-    // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
-        
+        HealthBar_UI.InitializeHealth(health);
     }
 
     // Update is called once per frame
@@ -24,6 +24,7 @@ public class HQController : MonoBehaviour
     public void DamageHQ(float damage) 
     {
         health -= damage;
+        HealthBar_UI.UpdateHealth_UI(health);
         if (health <= 0) 
         {
             GameManager.LoseGame();

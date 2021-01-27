@@ -29,11 +29,10 @@ public class ScreenShakeController : MonoBehaviour
     private void Update()
     {
         transform.position = TargetPosition;
-        /*
-         * Uncomment this to test
+
         if (Input.GetKeyDown(KeyCode.A))
             ShakeScreen(0.2f, 0.3f);
-        */
+
     }
 
     private void LateUpdate()                   // offset the position of the camera if the camera is shaking.
@@ -52,7 +51,9 @@ public class ScreenShakeController : MonoBehaviour
 
             ShakeRotation = Mathf.MoveTowards(ShakeRotation, 0f, ShakeFadeTime  * rotationMultiplier * Time.deltaTime);
         }
+
         transform.rotation = Quaternion.Euler(0f, 0f, ShakeRotation * Random.Range(-1f,1f));
+
     }
 
     private float GetRandomOffset()
