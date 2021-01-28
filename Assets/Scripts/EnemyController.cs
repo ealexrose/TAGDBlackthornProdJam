@@ -44,7 +44,10 @@ public class EnemyController : MonoBehaviour
 
         if (health <= 0) 
         {
-            ScreenShakeController.instance.ShakeScreen(0.1f, 0.1f);
+            if (ScreenShakeController.instance) 
+            {
+                ScreenShakeController.instance.ShakeScreen(0.1f, 0.1f);
+            }
             Destroy(this.gameObject);
         }
     }

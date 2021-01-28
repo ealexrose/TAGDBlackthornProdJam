@@ -102,9 +102,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 1
-  health: 10
+  health: 40
   strength: 4
   HealthBar_UI: {fileID: 5516316695710881873}
+  Gigantamax: 0
+  SmallRat: {fileID: 0}
+  MaxEnemiesToSpawn: 120
+  MaxPositionOffset: 0
 --- !u!58 &1571805644
 CircleCollider2D:
   m_ObjectHideFlags: 0
