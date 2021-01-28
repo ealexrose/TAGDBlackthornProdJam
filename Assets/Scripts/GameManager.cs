@@ -94,7 +94,7 @@ public class GameManager : MonoBehaviour
         if (TowerDestructionWithinMargin()) 
         {
             DestroyTowers();
-            Wave_Manager.SpawnWave(10,.2f);
+            Wave_Manager.NextWave();
         }
     }
 
@@ -103,7 +103,6 @@ public class GameManager : MonoBehaviour
         foreach (GameObject tower in towers) 
         {
             TowerController towerController = tower.GetComponent<TowerController>();
-            Debug.Log(tower);
             if (towerController.towerSlatedForDestruction)
             {
                 towerController.destroyed = true;
