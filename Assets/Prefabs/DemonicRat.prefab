@@ -58,14 +58,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.5566038, g: 0.5566038, b: 0.5566038, a: 1}
+  m_Color: {r: 0.2924528, g: 0.2924528, b: 0.2924528, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: d3c091c8e4a99da488d1608e6793cafc, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e2f132189bba22a49aa0c18e513e83b6, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -236,7 +236,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: df8a956ec14229847a87c2d18e32d189, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e2f132189bba22a49aa0c18e513e83b6, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -312,7 +312,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: d3c091c8e4a99da488d1608e6793cafc, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e2f132189bba22a49aa0c18e513e83b6, type: 3}
   m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -446,7 +446,6 @@ MonoBehaviour:
   MaxEnemiesToSpawn: 120
   MaxPositionOffset: 0
   Death_Velocity: 7
-  Death_State: 0
   Y_Offset_On_Death:
     serializedVersion: 2
     m_Curve:

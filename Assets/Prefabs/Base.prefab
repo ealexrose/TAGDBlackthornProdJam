@@ -147,8 +147,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 10
   HealthBar_UI: {fileID: 2993452059203138635}
-  Close_Quarters_Theme: {fileID: 8300000, guid: 4244b9604fab71c4789f6abb97182879, type: 3}
-  Broken_HQ: {fileID: 21300000, guid: 3bf8ac3b5115c4c4f8930d30b2a0d588, type: 3}
 --- !u!1001 &4003496923808541203
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -279,10 +277,6 @@ PrefabInstance:
     - target: {fileID: 2163319862738083417, guid: 3c5219a8c80d2b14bb4a965659faf932, type: 3}
       propertyPath: m_Color.r
       value: 0.25485048
-      objectReference: {fileID: 0}
-    - target: {fileID: 2163319862738083417, guid: 3c5219a8c80d2b14bb4a965659faf932, type: 3}
-      propertyPath: m_FillAmount
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2163319864579634668, guid: 3c5219a8c80d2b14bb4a965659faf932, type: 3}
       propertyPath: m_RaycastTarget

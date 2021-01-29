@@ -23,10 +23,12 @@ public class BulletController : MonoBehaviour
 
     IEnumerator ShootTowardsTarget(GameObject target) 
     {
-        EnemyController enem = target.GetComponent<EnemyController>();
+        SpriteRenderer BulletOpacity = null;
+        bool TargetDied = false;
+        float opacity = 255;
         for (float i = 0; i < 5f; i += Time.deltaTime)
         {
-            if (target && !enem.Death_State)                // if the target has died, stop following it.
+            if (target)
             {
                 Vector3 travelVector = target.transform.position - transform.position;
                 travelVector = travelVector.normalized;
