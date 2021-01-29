@@ -93,6 +93,7 @@ public class GameManager : MonoBehaviour
         NextWaveNotification.Play(WaveNotificationID, -1, 0);
         NextWaveButton.SetBool("WaveIntermission",true);
         BetweenWaves = true;
+        Wave_Manager.PrepNextWave();
         Debug.Log("wave ended");
         
     }

@@ -174,6 +174,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8251840485230362307, guid: dc6f9615f0c628d4797b7467674bcecc, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8800027568722192839, guid: dc6f9615f0c628d4797b7467674bcecc, type: 3}
       propertyPath: range
       value: 5
@@ -3974,6 +3978,10 @@ PrefabInstance:
       propertyPath: enemy
       value: 
       objectReference: {fileID: 8900904910878104345, guid: 73ace3a68b93e164aa1994f8b3c4f870, type: 3}
+    - target: {fileID: 6678865550939957394, guid: f1aa3a81170743049a839d6019b2abad, type: 3}
+      propertyPath: weight
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6678865550939957395, guid: f1aa3a81170743049a839d6019b2abad, type: 3}
       propertyPath: m_Name
       value: Wave Spawner (3)
@@ -9259,6 +9267,10 @@ PrefabInstance:
       propertyPath: enemy
       value: 
       objectReference: {fileID: 8900904910878104345, guid: 73ace3a68b93e164aa1994f8b3c4f870, type: 3}
+    - target: {fileID: 6678865550939957394, guid: f1aa3a81170743049a839d6019b2abad, type: 3}
+      propertyPath: weight
+      value: 1.2
+      objectReference: {fileID: 0}
     - target: {fileID: 6678865550939957395, guid: f1aa3a81170743049a839d6019b2abad, type: 3}
       propertyPath: m_Name
       value: Wave Spawner
@@ -9510,6 +9522,18 @@ PrefabInstance:
       propertyPath: enemy
       value: 
       objectReference: {fileID: 8900904910878104345, guid: 73ace3a68b93e164aa1994f8b3c4f870, type: 3}
+    - target: {fileID: 6678865550939957394, guid: f1aa3a81170743049a839d6019b2abad, type: 3}
+      propertyPath: weight
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6678865550939957394, guid: f1aa3a81170743049a839d6019b2abad, type: 3}
+      propertyPath: activtyChance
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6678865550939957394, guid: f1aa3a81170743049a839d6019b2abad, type: 3}
+      propertyPath: activtyChanceGrowth
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 6678865550939957395, guid: f1aa3a81170743049a839d6019b2abad, type: 3}
       propertyPath: m_Name
       value: Wave Spawner (1)
@@ -10479,7 +10503,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waveSize: 100
   timeBetweenSpawns: 0.5
-  startPower: 130
+  startPower: 100
 --- !u!4 &1608448289
 Transform:
   m_ObjectHideFlags: 0
@@ -12585,6 +12609,14 @@ PrefabInstance:
       propertyPath: enemy
       value: 
       objectReference: {fileID: 8900904910878104345, guid: 73ace3a68b93e164aa1994f8b3c4f870, type: 3}
+    - target: {fileID: 6678865550939957394, guid: f1aa3a81170743049a839d6019b2abad, type: 3}
+      propertyPath: activtyChance
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6678865550939957394, guid: f1aa3a81170743049a839d6019b2abad, type: 3}
+      propertyPath: activtyChanceGrowth
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 6678865550939957395, guid: f1aa3a81170743049a839d6019b2abad, type: 3}
       propertyPath: m_Name
       value: Wave Spawner (2)
@@ -13018,6 +13050,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 670157827, guid: 98a1554710ebb8e4691b29b60b52f52b, type: 3}
+      propertyPath: health
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 1954976755863742051, guid: 98a1554710ebb8e4691b29b60b52f52b, type: 3}
       propertyPath: m_RootOrder
       value: 3
