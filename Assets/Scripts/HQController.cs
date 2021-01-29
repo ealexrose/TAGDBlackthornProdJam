@@ -7,6 +7,9 @@ public class HQController : MonoBehaviour
 {
     public float health;
     [SerializeField] Healthbar HealthBar_UI;
+    [SerializeField] AudioClip Close_Quarters_Theme;
+    [SerializeField] Sprite Broken_HQ;
+    bool Close_TO_Death;
 
     private void Awake()
     {

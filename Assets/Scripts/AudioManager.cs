@@ -27,17 +27,17 @@ public class AudioManager : MonoBehaviour
 
     private bool firstMusicSourceIsPlaying = true;
     //unity fix
-    public AudioClip musicClip;                             
+    public AudioClip musicClip;
     //public static AudioMixer audioMixer = null;
     #endregion
-
+    private float GlobalVolume;
     private void Awake()
     {
         //Makes sure the instance doesn't get destroyed
 
 
         //Creates and Saves audio sources as references
-
+        Instance = this;
         musicsource = this.gameObject.AddComponent<AudioSource>();
         musicsource2 = this.gameObject.AddComponent<AudioSource>();
         sfxsource = this.gameObject.AddComponent<AudioSource>();
@@ -122,6 +122,7 @@ public class AudioManager : MonoBehaviour
             yield return null;
         }
         original.Stop();
+        SetMusicVolume(0.6f);
     }
 
     public void PlaySFX(AudioClip clip)
