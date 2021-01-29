@@ -66,6 +66,7 @@ public class EnemyController : MonoBehaviour
             {
                 ScreenShakeController.instance.ShakeScreen(0.1f, 0.1f);
             }
+            SFX_Manager.Instance.PlayRandomSqueaks();
             GetComponent<CircleCollider2D>().enabled = false;
             Enemy_AI.enabled = false;
             Death_State = true;

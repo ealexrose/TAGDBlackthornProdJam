@@ -56,12 +56,14 @@ public class PauseMenu : MonoBehaviour
 
     public void ChangePausedState(bool State)
     {
+        SFX_Manager.Instance.PlayRandomButtonClick();
         GameIsPaused = State;
     }
 
     public void QuitToMenu()
     {
         // quit to menu or quit game?
+        SFX_Manager.Instance.PlayRandomButtonClick();
         SceneManager.LoadScene(0);
     }
     

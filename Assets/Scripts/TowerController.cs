@@ -113,7 +113,7 @@ public class TowerController : MonoBehaviour
         ReduceCooldown();
         if (isTargetValid)
         {
-            if (cooldownTimer <= 0)
+            if (cooldownTimer < 0)
             {
                 ShootTarget();
             }
@@ -125,7 +125,7 @@ public class TowerController : MonoBehaviour
     }
     private void ReduceCooldown()
     {
-        if (cooldownTimer > 0)
+        if (cooldownTimer >= 0)
         {
             cooldownTimer -= Time.deltaTime;
         }

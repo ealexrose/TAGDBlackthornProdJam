@@ -24,6 +24,7 @@ public class LevelLoader : MonoBehaviour
 
     public void LoadNextLevel()
     {
+        SFX_Manager.Instance.PlayRandomButtonClick();
         int nextIndex = SceneManager.GetActiveScene().buildIndex + 1;
         
         if(nextIndex >= SceneManager.sceneCountInBuildSettings){
@@ -44,6 +45,7 @@ public class LevelLoader : MonoBehaviour
 
     public void QuitGame()
     {
+        SFX_Manager.Instance.PlayRandomButtonClick();
         Debug.Log("Quitting Game");
         Application.Quit();
     }

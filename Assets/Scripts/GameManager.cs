@@ -66,6 +66,7 @@ public class GameManager : MonoBehaviour
         }
         else
         {
+            SFX_Manager.Instance.PlayRandomButtonClick();
             Time.timeScale = 5f;
             fastforwarding = true;
             return;
@@ -129,6 +130,7 @@ public class GameManager : MonoBehaviour
     {
         foreach (GameObject tower in towers) 
         {
+            SFX_Manager.Instance.PlayRandomDeactivateTower();
             TowerController towerController = tower.GetComponent<TowerController>();
             if (towerController.towerSlatedForDestruction)
             {

@@ -9,23 +9,32 @@ public class BulletController : MonoBehaviour
     public float bulletDamage;
     Vector3 velocity;
     bool hit;
+    public AudioSource BulletFire;
 
+    private void Awake()
+    {
+        AudioClip clip = SFX_Manager.Instance.GetRandomFire();
+        BulletFire.clip = clip;
+        BulletFire.Play();
+    }
     // Update is called once per frame
     void Update()
     {
     }
 
-    public void SetTarget(GameObject target) 
+    public void SetTarget(GameObject target)
     {
         StartCoroutine(ShootTowardsTarget(target));
     }
 
 
-    IEnumerator ShootTowardsTarget(GameObject target) 
+    IEnumerator ShootTowardsTarget(GameObject target)
     {
-        SpriteRenderer BulletOpacity = null;
-        bool TargetDied = false;
-        float opacity = 255;
+        EnemyController enem = target.GetComponent<EnemyController>();
+        if (enem.Death_State)
+        {
+            Destroy(this.gameObject);
+        }
         for (float i = 0; i < 5f; i += Time.deltaTime)
         {
             if (target)
@@ -45,7 +54,7 @@ public class BulletController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Enemy")) 
+        if (collision.gameObject.CompareTag("Enemy"))
         {
             if (!hit)
             {
