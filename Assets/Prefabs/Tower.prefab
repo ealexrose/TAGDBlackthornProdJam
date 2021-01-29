@@ -347,9 +347,9 @@ MonoBehaviour:
   projectile: {fileID: 8703870202615670774, guid: 4be1310f75eb60141ad0b1f801d6cbb0, type: 3}
   target: {fileID: 0}
   destructionPreview: {fileID: 3974581635698627639, guid: 3e08d9e469498ae4f94815266dc22b71, type: 3}
-  range: 1
+  range: 5
   shootSpeedCooldown: 0.3
-  damage: 4
+  damage: 1
   towerSlatedForDestruction: 0
   destroyed: 0
 --- !u!58 &587108955061822393

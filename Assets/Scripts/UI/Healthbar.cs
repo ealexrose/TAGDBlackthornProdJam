@@ -12,9 +12,15 @@ public class Healthbar : MonoBehaviour
     float Health_Fade_Time;
     private float TargetRatio;
 
+    [SerializeField] Transform Target;
+    [SerializeField] Transform Health_Parent;
+    float Y_Offset;
+
     private void Awake()
     {
         health_UI = GetComponent<Image>();
+        if(Health_Parent && Target)
+            Y_Offset = Health_Parent.position.y - Target.position.y;
     }
 
     public void InitializeHealth(float total_Health)
@@ -40,6 +46,8 @@ public class Healthbar : MonoBehaviour
             float Current_Ratio = Mathf.MoveTowards(health_UI.fillAmount, TargetRatio, Health_Fade_Time * Time.deltaTime);
             health_UI.fillAmount = Current_Ratio;
         }
+        if (Health_Parent && Target)
+            Health_Parent.position = new Vector3(Target.position.x, Target.position.y + Y_Offset, 0);
     }
 
 }
