@@ -93,6 +93,7 @@ public class GameManager : MonoBehaviour
         NextWaveTextBox.fontSize = 10;
         NextWaveTextBox.text = NextWaveIntermissionText;            // replace x with the wave number
         NextWaveNotification.Play(WaveNotificationID, -1, 0);
+        Wave_Manager.PrepNextWave();
         NextWaveButton.SetBool("WaveIntermission",true);
         BetweenWaves = true;
         Debug.Log("wave ended");

@@ -10,11 +10,12 @@ public class WaveManager : MonoBehaviour
     public float startPower;
     float power;
     List<GameObject> waveSpawners = new List<GameObject>();
-
+    List<int> activeWaveSpawners;
     // Start is called before the first frame update
     void Start()
     {
         power = startPower;
+        PrepNextWave();
         NextWave();
     }
 
@@ -56,13 +57,34 @@ public class WaveManager : MonoBehaviour
         power *= 1.35f;
     }
 
+    public void PrepNextWave()
+    {
+        activeWaveSpawners = GetActiveSpawnersForWave();
+        GiveActiveSpawnersPower(activeWaveSpawners, power);
+        ShowDanger(activeWaveSpawners);
+    }
+
+    private void ShowDanger(List<int> activeWaveSpawners)
+    {
+        for (int i = 0; i < activeWaveSpawners.Count; i++)
+        {
+            waveSpawners[activeWaveSpawners[i]].GetComponent<WaveSpawner>().ShowDangerSymbol();
+        }
+    }
+
+    private void HideDanger(List<int> activeWaveSpawners)
+    {
+        for (int i = 0; i < activeWaveSpawners.Count; i++)
+        {
+            waveSpawners[activeWaveSpawners[i]].GetComponent<WaveSpawner>().HideDangerSymbols();
+        }
+    }
+
     public void SpawnWave(float power)
     {
         waveActive = true;
         GameManager.BetweenWaves = false;
-
-        List<int> activeWaveSpawners = GetActiveSpawnersForWave();
-        GiveActiveSpawnersPower(activeWaveSpawners, power);
+        HideDanger(activeWaveSpawners);
         ActivateSpawners(activeWaveSpawners);
     }
 

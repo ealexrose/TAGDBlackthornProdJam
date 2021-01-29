@@ -22,10 +22,15 @@ public class HQController : MonoBehaviour
         ScreenShakeController.instance.ShakeScreen(0.4f, 0.15f);        // big shake!!
         HealthBar_UI.UpdateHealth_UI(health);
         SFX_Manager.Instance.PlayRandomBaseDamage();
-        if (health < 5 && !Close_TO_Death)
+        if (health < 25 && !Close_TO_Death)
         {
             Close_TO_Death = true;
             AudioManager.Instance.PlayMusicwithCrossFade(Close_Quarters_Theme, 0.65f);
+        }
+        if (health <= 0)
+        {
+            GetComponent<SpriteRenderer>().sprite = Broken_HQ;
+            GameManager.instance.LoseGame();
         }
     }
 

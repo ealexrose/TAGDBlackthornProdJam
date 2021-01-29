@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4606740918361355511}
-  - component: {fileID: 4606740918361355510}
+  - component: {fileID: 9128243281314087331}
   m_Layer: 0
   m_Name: SFX MANAGER
   m_TagString: Untagged
@@ -31,7 +31,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4606740918361355510
+--- !u!114 &9128243281314087331
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -40,7 +40,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4606740918361355509}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 44cb791244ae908479db4df401293033, type: 3}
+  m_Script: {fileID: 11500000, guid: bf058443e739cc046a34388c8722faa9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Button_Click_SFX:
@@ -61,11 +61,11 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 31e87db23abb93e4f961637c7184ffd2, type: 3}
   - {fileID: 8300000, guid: 9849cf63286ac774483ba0096b5ed606, type: 3}
   Fire:
+  - {fileID: 8300000, guid: 2c9a1aff41954914996df84b47ab3ab9, type: 3}
   - {fileID: 8300000, guid: 21365461672660d4e9079130d1854edd, type: 3}
   - {fileID: 8300000, guid: b470203b18809a44faa98f7991f4043c, type: 3}
   - {fileID: 8300000, guid: 374e2c1418078b7438a88335061bb6ea, type: 3}
   - {fileID: 8300000, guid: 40532410eb7623e4e950179c90269966, type: 3}
-  - {fileID: 8300000, guid: 2c9a1aff41954914996df84b47ab3ab9, type: 3}
   DeactivateTower:
   - {fileID: 8300000, guid: 3cdbbd425c7585247abf335b3b095dfe, type: 3}
   - {fileID: 8300000, guid: ce6b3713d1278324ab6d75bec5ddee00, type: 3}
