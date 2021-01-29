@@ -48,7 +48,7 @@ public class EnemyController : MonoBehaviour
             {
                 ScreenShakeController.instance.ShakeScreen(0.1f, 0.1f);
             }
-            Destroy(this.gameObject);
+            Destroy(this.transform.parent.gameObject);
         }
     }
 
@@ -64,7 +64,7 @@ public class EnemyController : MonoBehaviour
             float _YOffset = Random.Range(-MaxPositionOffset, MaxPositionOffset);
             newEnemy.transform.position += new Vector3(_XOffset, _YOffset, 0);
             MaxEnemiesToSpawn--;
-            newEnemy.GetComponent<Pathfinding.AIDestinationSetter>().target = Target.target;
+            newEnemy.GetComponentInChildren<Pathfinding.AIDestinationSetter>().target = Target.target;
             
         }
     }

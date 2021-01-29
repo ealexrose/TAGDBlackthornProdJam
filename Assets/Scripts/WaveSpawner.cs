@@ -99,8 +99,8 @@ public class WaveSpawner : MonoBehaviour
                     {
                         yield return new WaitForSeconds(timeBetweenSpawns);
                         GameObject clone = Instantiate(enemy, transform.position, Quaternion.identity, null);
-                        clone.GetComponent<AIDestinationSetter>().target = Base;
-                        Debug.Log(clone.GetComponent<AIDestinationSetter>().target);
+                        clone.GetComponentInChildren<AIDestinationSetter>().target = Base;
+                        Debug.Log(clone.GetComponentInChildren<AIDestinationSetter>().target);
                         yield return new WaitForSeconds(timeBetweenSpawns);
                     }
                     break;
