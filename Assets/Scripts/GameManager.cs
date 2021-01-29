@@ -106,6 +106,7 @@ public class GameManager : MonoBehaviour
             if (towerController.towerSlatedForDestruction)
             {
                 towerController.destroyed = true;
+                tower.GetComponentInChildren<Animator>().SetTrigger("Deactivate");
             }
             else if(!towerController.destroyed)
             {
