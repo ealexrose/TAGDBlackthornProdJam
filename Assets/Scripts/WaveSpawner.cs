@@ -9,6 +9,10 @@ public class WaveSpawner : MonoBehaviour
     public GameObject enemy;
     public Transform Base;
 
+    public GameObject indicator;
+    public GameObject ratImage;
+
+    public Vector2 warningScaleBounds;
     //How often this spawner will get used
     public float activtyChance;
     public float activtyChanceGrowth;
@@ -120,6 +124,7 @@ public class WaveSpawner : MonoBehaviour
     {
         int enemiesToSpawn = 0;
         enemiesToSpawn = (int)(powerForSpawnCount * ((Mathf.Sqrt(powerForSpawnInterval) / 0.56f) * 0.1f));
+        Debug.Log(powerForSpawnCount + " Spawn power with " + powerForSpawnInterval + " spawns " + enemiesToSpawn);
         return enemiesToSpawn;
     }
 
@@ -128,5 +133,16 @@ public class WaveSpawner : MonoBehaviour
         float convertedTime = 0;
         convertedTime = .56f / (Mathf.Pow(spentPower, 9f / 8f) / 2f);
         return convertedTime;
+    }
+
+    public void ShowDangerSymbol() 
+    {
+        indicator.SetActive(true);
+        ratImage.transform.localScale = Vector3.one *  Mathf.Clamp(effectivePower/50f, .8f, 2f);
+    }
+    public void HideDangerSymbols() 
+    {
+        indicator.SetActive(false);
+        //ratImage.transform.localScale = Vector3.one * Mathf.Clamp(effectivePower / 50f, .8f, 2f);
     }
 }
