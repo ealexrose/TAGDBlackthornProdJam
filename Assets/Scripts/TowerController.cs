@@ -63,7 +63,7 @@ public class TowerController : MonoBehaviour
             {
                 instantiatedDestructionPreview = Instantiate(destructionPreview, gameObject.transform, false);
                 instantiatedDestructionPreview.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 0.5f);
-                instantiatedDestructionPreview.transform.localPosition = Vector3.zero;
+                instantiatedDestructionPreview.transform.localPosition = Vector3.down * 0.4f;
             }
 
             if (Input.GetButtonDown("Fire1"))
