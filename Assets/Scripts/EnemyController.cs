@@ -21,26 +21,9 @@ public class EnemyController : MonoBehaviour
     float totalHealth;          // enemy will shrink based on their health
     #endregion
 
-    #region Death State
-    [Header("Death State")]
-    [SerializeField] float Spin_Speed = 4;
-    [SerializeField] float Death_Velocity = 4;
-    private Pathfinding.AIPath Enemy_AI;
-    private bool Death_State;
-    private float Random_X_Velocity;
-    private Animator Rat_Anim;
-    public AnimationCurve Y_Offset_On_Death;
-    private float Death_Time;
-    #endregion
-
-
     private void Awake()
     {
-        Enemy_AI = GetComponent<Pathfinding.AIPath>();
         HealthBar_UI.InitializeHealth(health);
-        Random_X_Velocity = Mathf.Sign(Random.Range(-1f,1f)) * Random.RandomRange(0.1f,2f);        // random direction and magnitude.
-
-        Rat_Anim = GetComponent<Animator>();
         if (Gigantamax)
         {
             Target = GetComponent<Pathfinding.AIDestinationSetter>();
@@ -65,11 +48,7 @@ public class EnemyController : MonoBehaviour
             {
                 ScreenShakeController.instance.ShakeScreen(0.1f, 0.1f);
             }
-            Enemy_AI.enabled = false;
-            Death_State = true;
-            GetComponent<CircleCollider2D>().enabled = false;
-            Rat_Anim.Play(Animator.StringToHash("Rat_Fade"));
-            HealthBar_UI.transform.parent.parent.gameObject.SetActive(false);
+            Destroy(this.transform.parent.gameObject);
         }
     }
 
@@ -86,23 +65,7 @@ public class EnemyController : MonoBehaviour
             newEnemy.transform.position += new Vector3(_XOffset, _YOffset, 0);
             MaxEnemiesToSpawn--;
             newEnemy.GetComponentInChildren<Pathfinding.AIDestinationSetter>().target = Target.target;
+            
         }
-    }
-
-    private void Update()
-    {
-        if (Death_State)
-        {
-            Death_Time += Time.deltaTime;
-            transform.position += new Vector3(Random_X_Velocity * moveSpeed * Time.deltaTime, 0, 0);       // shoot the camera in a random direction
-            transform.Translate(0, Y_Offset_On_Death.Evaluate(Death_Time) * Time.deltaTime, 0, Space.World);
-            //if(transform.rotation.z <= 180)
-            //transform.Rotate(0, 0, Spin_Speed * Time.deltaTime);
-        }
-    }
-
-    public void DestroyEnemy()
-    {
-        Destroy(this.transform.parent.gameObject);
     }
 }
