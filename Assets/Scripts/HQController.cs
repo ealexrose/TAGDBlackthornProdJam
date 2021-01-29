@@ -28,8 +28,10 @@ public class HQController : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Enemy"))
         {
-            DamageHQ(collision.gameObject.GetComponent<EnemyController>().strength);
-            Destroy(collision.gameObject);
+            var enem = collision.gameObject.GetComponent<EnemyController>();
+            if (enem.Death_State) { return; }       // if the enemy is dead, dont let it attack
+            DamageHQ(enem.strength);
+            Destroy(enem.transform.parent.gameObject);
         }
     }
 }

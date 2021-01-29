@@ -23,10 +23,9 @@ public class EnemyController : MonoBehaviour
 
     #region Death State
     [Header("Death State")]
-    [SerializeField] float Spin_Speed = 4;
     [SerializeField] float Death_Velocity = 4;
     private Pathfinding.AIPath Enemy_AI;
-    private bool Death_State;
+    [HideInInspector] public bool Death_State;
     private float Random_X_Velocity;
     private Animator Rat_Anim;
     public AnimationCurve Y_Offset_On_Death;
@@ -51,6 +50,8 @@ public class EnemyController : MonoBehaviour
 
     public void Damage(float damage) 
     {
+        if (Death_State) { return; }
+
         health -= damage;
         HealthBar_UI.UpdateHealth_UI(health);
 
@@ -65,9 +66,9 @@ public class EnemyController : MonoBehaviour
             {
                 ScreenShakeController.instance.ShakeScreen(0.1f, 0.1f);
             }
+            GetComponent<CircleCollider2D>().enabled = false;
             Enemy_AI.enabled = false;
             Death_State = true;
-            GetComponent<CircleCollider2D>().enabled = false;
             Rat_Anim.Play(Animator.StringToHash("Rat_Fade"));
             HealthBar_UI.transform.parent.parent.gameObject.SetActive(false);
         }
@@ -96,8 +97,6 @@ public class EnemyController : MonoBehaviour
             Death_Time += Time.deltaTime;
             transform.position += new Vector3(Random_X_Velocity * moveSpeed * Time.deltaTime, 0, 0);       // shoot the camera in a random direction
             transform.Translate(0, Y_Offset_On_Death.Evaluate(Death_Time) * Time.deltaTime, 0, Space.World);
-            //if(transform.rotation.z <= 180)
-            //transform.Rotate(0, 0, Spin_Speed * Time.deltaTime);
         }
     }
 

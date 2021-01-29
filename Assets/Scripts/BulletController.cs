@@ -9,11 +9,6 @@ public class BulletController : MonoBehaviour
     public float bulletDamage;
     Vector3 velocity;
     bool hit;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()
@@ -28,6 +23,9 @@ public class BulletController : MonoBehaviour
 
     IEnumerator ShootTowardsTarget(GameObject target) 
     {
+        SpriteRenderer BulletOpacity = null;
+        bool TargetDied = false;
+        float opacity = 255;
         for (float i = 0; i < 5f; i += Time.deltaTime)
         {
             if (target)

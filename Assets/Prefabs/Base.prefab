@@ -74,7 +74,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: a234dbb4444e19043b034edb0dc4e1cb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -196,7 +196,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2163319862604465602, guid: 3c5219a8c80d2b14bb4a965659faf932, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.54224336
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2163319862604465602, guid: 3c5219a8c80d2b14bb4a965659faf932, type: 3}
       propertyPath: m_LocalScale.y
@@ -240,7 +240,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2163319862604465602, guid: 3c5219a8c80d2b14bb4a965659faf932, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 1.2
+      value: -3.29
       objectReference: {fileID: 0}
     - target: {fileID: 2163319862604465602, guid: 3c5219a8c80d2b14bb4a965659faf932, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -268,18 +268,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2163319862738083417, guid: 3c5219a8c80d2b14bb4a965659faf932, type: 3}
       propertyPath: m_Color.b
-      value: 0.0013723373
+      value: 0.7830189
       objectReference: {fileID: 0}
     - target: {fileID: 2163319862738083417, guid: 3c5219a8c80d2b14bb4a965659faf932, type: 3}
       propertyPath: m_Color.g
-      value: 1
+      value: 0.26585382
       objectReference: {fileID: 0}
     - target: {fileID: 2163319862738083417, guid: 3c5219a8c80d2b14bb4a965659faf932, type: 3}
       propertyPath: m_Color.r
-      value: 0
+      value: 0.25485048
       objectReference: {fileID: 0}
     - target: {fileID: 2163319864579634668, guid: 3c5219a8c80d2b14bb4a965659faf932, type: 3}
       propertyPath: m_RaycastTarget
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6228224174253124141, guid: 3c5219a8c80d2b14bb4a965659faf932, type: 3}
+      propertyPath: m_BlocksRaycasts
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []

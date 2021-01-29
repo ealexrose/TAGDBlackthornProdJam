@@ -88,12 +88,16 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4512886677312149302, guid: 73e0f299dfa25504e8e6c329e56b78e4, type: 3}
+      propertyPath: MaxEnemiesToSpawn
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 4512886677312149302, guid: 73e0f299dfa25504e8e6c329e56b78e4, type: 3}
       propertyPath: MaxPositionOffset
       value: 1.36
       objectReference: {fileID: 0}
     - target: {fileID: 7995799790402962645, guid: 73e0f299dfa25504e8e6c329e56b78e4, type: 3}
       propertyPath: m_Name
-      value: Big Enemy
+      value: Big Enemy Variant
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 73e0f299dfa25504e8e6c329e56b78e4, type: 3}

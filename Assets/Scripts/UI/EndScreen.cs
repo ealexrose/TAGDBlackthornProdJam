@@ -11,6 +11,6 @@ public class EndScreen : MonoBehaviour
 
     public void QuitToMenu()
     {
-        // Quit the game;
+        SceneManager.LoadScene(0);
     }
 }

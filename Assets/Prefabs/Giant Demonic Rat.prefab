@@ -105,9 +105,71 @@ MonoBehaviour:
   strength: 4
   HealthBar_UI: {fileID: 8043278579186612537}
   Gigantamax: 1
-  SmallRat: {fileID: 7995799790402962645, guid: 73e0f299dfa25504e8e6c329e56b78e4, type: 3}
-  MaxEnemiesToSpawn: 120
+  SmallRat: {fileID: 8900904910878104345, guid: 73ace3a68b93e164aa1994f8b3c4f870, type: 3}
+  MaxEnemiesToSpawn: 25
   MaxPositionOffset: 1.36
+  Death_Velocity: 4
+  Death_State: 0
+  Y_Offset_On_Death:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 10.099932
+      outSlope: 10.099932
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.053969257
+    - serializedVersion: 3
+      time: 0.33333334
+      value: 2
+      inSlope: -0.00000047683716
+      outSlope: -0.00000047683716
+      tangentMode: 34
+      weightedMode: 3
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.6666666
+      value: 0
+      inSlope: -12
+      outSlope: -12
+      tangentMode: 34
+      weightedMode: 3
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: -6
+      inSlope: -23.7
+      outSlope: -23.7
+      tangentMode: 34
+      weightedMode: 3
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1.3
+      value: -14.82
+      inSlope: -34.799995
+      outSlope: -34.799995
+      tangentMode: 34
+      weightedMode: 3
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1.6
+      value: -26.88
+      inSlope: -40.19999
+      outSlope: -40.19999
+      tangentMode: 34
+      weightedMode: 3
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!58 &2527244579743578276
 CircleCollider2D:
   m_ObjectHideFlags: 0

@@ -16,14 +16,17 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update 
     public static GameManager instance;
     bool fastforwarding;
-
+    bool Dead;
     #region User Interface Variables
     [SerializeField] Animator EndScreenUI;
     [SerializeField] Animator NextWaveNotification;
     [SerializeField] Animator NextWaveButton;
+    [SerializeField] Animator HelpfulTooltip;           // useful incase the player does not know that they need to destroy towers.
+    int Number_OF_Failures = 0;
+    private TMPro.TextMeshProUGUI NextWaveTextBox;
     int WaveNotificationID;     // Hash ID of the Wave Animation
 
-    string NextWaveText = "Wave X Finished \nDestroy towers to power up remaining towers";
+    string NextWaveIntermissionText = "Wave X Finished \nDestroy towers to power up remaining towers";
     string NextWaveStartingText = "Next Wave Starting...";
 
     #endregion
@@ -32,13 +35,15 @@ public class GameManager : MonoBehaviour
     {
         instance = this;
         WaveNotificationID = Animator.StringToHash("WaveNotification");
+        NextWaveTextBox = NextWaveNotification.GetComponentInChildren<TMPro.TextMeshProUGUI>();
         Wave_Manager = GetComponent<WaveManager>();
+        Time.timeScale = 1f;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (PauseMenu.instance.GameIsPaused) { return; }        // bugs arise when we try to pause the game and then speed up. It changes the time scale when it is paused.
+        if (PauseMenu.instance.GameIsPaused | Dead) { return; }        // bugs arise when we try to pause the game and then speed up. It changes the time scale when it is paused.
         if (Input.GetButtonDown("Jump") && BetweenWaves) 
         {
             TryStartNextWave();
@@ -83,19 +88,40 @@ public class GameManager : MonoBehaviour
 
     public void WaveEnded() 
     {
-        NextWaveNotification.Play(WaveNotificationID);
+        if (Dead) { return; }
+        NextWaveTextBox.text = NextWaveIntermissionText;            // replace x with the wave number
+        NextWaveNotification.Play(WaveNotificationID, -1, 0);
         NextWaveButton.SetBool("WaveIntermission",true);
         BetweenWaves = true;
         Debug.Log("wave ended");
+        
     }
 
-    void TryStartNextWave() 
+    public void TryStartNextWave() 
     {
         if (TowerDestructionWithinMargin()) 
         {
+            Number_OF_Failures = 0;
+            HandleNextWaveUI();
             DestroyTowers();
             Wave_Manager.NextWave();
         }
+        else
+        {
+            Number_OF_Failures++;
+            if(Number_OF_Failures >= 3)
+            {
+                Number_OF_Failures = 0;
+                HelpfulTooltip.Play(WaveNotificationID, -1, 0);
+            }
+        }
+    }
+
+    private void HandleNextWaveUI()
+    {
+        NextWaveNotification.Play(WaveNotificationID, -1, 0);
+        NextWaveTextBox.text = NextWaveStartingText; // replace the "X" with the new wave number.
+        NextWaveButton.SetBool("WaveIntermission", false);
     }
 
     private void DestroyTowers()
@@ -118,6 +144,7 @@ public class GameManager : MonoBehaviour
 
     public void LoseGame() 
     {
+        Dead = true;
         EndScreenUI.SetTrigger("GameEnded");
         // do other stuff here
     }
