@@ -26,7 +26,7 @@ public class GameManager : MonoBehaviour
     private TMPro.TextMeshProUGUI NextWaveTextBox;
     int WaveNotificationID;     // Hash ID of the Wave Animation
 
-    string NextWaveIntermissionText = "Wave X Finished \nDestroy towers to power up remaining towers";
+    string NextWaveIntermissionText = "Wave X Finished\nDestroy 1-3 towers to\npower up remaining towers";
     string NextWaveStartingText = "Next Wave Starting...";
 
     #endregion
@@ -89,6 +89,7 @@ public class GameManager : MonoBehaviour
     public void WaveEnded() 
     {
         if (Dead) { return; }
+        NextWaveTextBox.fontSize = 10;
         NextWaveTextBox.text = NextWaveIntermissionText;            // replace x with the wave number
         NextWaveNotification.Play(WaveNotificationID, -1, 0);
         NextWaveButton.SetBool("WaveIntermission",true);
@@ -121,6 +122,7 @@ public class GameManager : MonoBehaviour
     private void HandleNextWaveUI()
     {
         NextWaveNotification.Play(WaveNotificationID, -1, 0);
+        NextWaveTextBox.fontSize = 15;
         NextWaveTextBox.text = NextWaveStartingText; // replace the "X" with the new wave number.
         NextWaveButton.SetBool("WaveIntermission", false);
     }
